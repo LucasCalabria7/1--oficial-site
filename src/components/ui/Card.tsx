@@ -10,7 +10,7 @@ const Card: React.FC<CardProps> = ({ children, className = '' }) => {
   return (
     <motion.div
       className={`bg-dark-800 rounded-lg shadow-dark p-6 md:p-8 ${className}`}
-      whileHover={{ y: -5, boxShadow: '0 10px 30px rgba(212, 175, 55, 0.2)' }}
+      whileHover={{ y: -5, boxShadow: '0 10px 30px rgba(87, 108, 237, 0.2)' }}
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}

@@ -49,7 +49,7 @@ const Header: React.FC = () => {
               <li key={item.name}>
                 <a
                   href={item.href}
-                  className="font-medium text-gray-300 hover:text-gold-500 transition-colors"
+                  className="font-medium text-gray-300 hover:text-primary-300 transition-colors"
                 >
                   {item.name}
                 </a>
@@ -74,7 +74,7 @@ const Header: React.FC = () => {
           aria-label={isOpen ? "Close menu" : "Open menu"}
         >
           {isOpen ? (
-            <X className="h-6 w-6 text-gold-500" />
+            <X className="h-6 w-6 text-primary-300" />
           ) : (
             <Menu className="h-6 w-6 text-white" />
           )}
@@ -97,7 +97,7 @@ const Header: React.FC = () => {
                       <li key={item.name}>
                         <a
                           href={item.href}
-                          className="text-xl font-medium text-gray-300 hover:text-gold-500 transition-colors"
+                          className="text-xl font-medium text-gray-300 hover:text-primary-300 transition-colors"
                           onClick={() => setIsOpen(false)}
                         >
                           {item.name}

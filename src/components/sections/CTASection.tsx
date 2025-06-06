@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Button from '../ui/Button';
 import { LINKS } from '../../utils/constants';
-import { Crown as WhatsApp, DollarSign, Code } from 'lucide-react';
+import { Crown as WhatsApp } from 'lucide-react';
 
 const CTASection: React.FC = () => {
   return (
@@ -26,6 +26,7 @@ const CTASection: React.FC = () => {
             y="0"
             width="100%"
             height="100%"
+            fill="url(#pattern-circles)"
           ></rect>
         </svg>
       </div>
@@ -39,7 +40,7 @@ const CTASection: React.FC = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            Pronto para fazer parte do <span className="text-gold-500">1%</span> que transforma o mundo?
+            Pronto para fazer parte do <span className="text-primary-300">1%</span> que transforma o mundo?
           </motion.h2>
           
           <motion.p

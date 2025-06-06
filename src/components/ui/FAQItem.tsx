@@ -16,7 +16,7 @@ const FAQItem: React.FC<FAQItemProps> = ({ question, answer }) => {
         className="flex justify-between items-center w-full text-left focus:outline-none"
         onClick={() => setIsOpen(!isOpen)}
       >
-        <h3 className="text-lg font-poppins font-semibold text-primary-900">{question}</h3>
+        <h3 className="text-lg font-poppins font-semibold text-primary-700">{question}</h3>
         <motion.div
           animate={{ rotate: isOpen ? 180 : 0 }}
           transition={{ duration: 0.3 }}

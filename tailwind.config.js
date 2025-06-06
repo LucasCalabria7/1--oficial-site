@@ -8,26 +8,17 @@ export default {
     extend: {
       colors: {
         primary: {
-          100: '#E6EDF7',
-          500: '#4169E1',
-          800: '#1E3A8A',
-          900: '#0B1B3F'
-        },
-        secondary: {
-          50: '#F0F7FF',
-          100: '#E6F0FF',
-          500: '#87CEEB',
-          800: '#1E40AF'
+          100: '#E6EAF9',
+          300: '#576ced', // New light blue
+          500: '#0321d6', // New medium blue
+          700: '#051473', // New dark blue
+          900: '#030A40'
         },
         dark: {
           100: '#E6E6E6',
           200: '#CCCCCC',
-          800: '#1A1A1A',
-          900: '#0D0D0D'
-        },
-        gold: {
-          400: '#FFE44D',
-          500: '#D4AF37'
+          800: '#051473', // Using new dark blue
+          900: '#030A40'  // Darker shade of dark blue
         }
       },
       fontFamily: {
@@ -36,14 +27,13 @@ export default {
         poppins: ['Poppins', 'sans-serif']
       },
       boxShadow: {
-        dark: '0 4px 6px -1px rgba(0, 0, 0, 0.5)',
-        gold: '0 4px 6px -1px rgba(212, 175, 55, 0.3)',
-        premium: '0 10px 25px -5px rgba(11, 27, 63, 0.1)'
+        dark: '0 4px 6px -1px rgba(5, 20, 115, 0.5)',
+        premium: '0 10px 25px -5px rgba(5, 20, 115, 0.2)'
       },
       backgroundImage: {
-        'gradient-button': 'linear-gradient(to right, #D4AF37, #FFE44D)',
-        'gradient-dark': 'linear-gradient(to bottom, #0B1B3F, #1A1A1A)',
-        'gradient-primary': 'linear-gradient(135deg, #0B1B3F 0%, #1E3A8A 100%)'
+        'gradient-button': 'linear-gradient(45deg, #051473, #0321d6, #576ced)',
+        'gradient-dark': 'linear-gradient(to bottom, #051473, #030A40)',
+        'gradient-primary': 'linear-gradient(135deg, #051473 0%, #0321d6 100%)'
       }
     }
   },

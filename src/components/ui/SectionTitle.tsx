@@ -17,7 +17,7 @@ const SectionTitle: React.FC<SectionTitleProps> = ({
   return (
     <div className={`mb-12 ${center ? 'text-center' : ''}`}>
       <motion.h2 
-        className={`${light ? 'text-white' : 'text-primary-900'} font-playfair mb-3`}
+        className={`${light ? 'text-white' : 'text-primary-900'} font-poppins mb-3`}
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}

@@ -44,7 +44,7 @@ export const TESTIMONIALS = [
   {
     name: "João Silva",
     role: "Empreendedor Digital",
-    content: "Com as estratégias da 1% World, consegui escalar meu negócio de R$10 mil para R$100 mil mensais em apenas 3 meses.",
+    content: "Com as estratégias da 1% World, consegui escalar meu negócio de R$10 mil para R$60 mil mensais em apenas 3 meses.",
     avatar: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=600"
   },
   {
@@ -56,7 +56,7 @@ export const TESTIMONIALS = [
   {
     name: "Carlos Mendes",
     role: "Consultor de Vendas",
-    content: "Implementando os métodos do Thales, minha taxa de conversão aumentou em 300% e hoje vendo para clientes internacionais.",
+    content: "Implementando os métodos do Thales, minha taxa de conversão aumentou em 120% e hoje vendo para clientes internacionais.",
     avatar: "https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&w=600"
   }
 ];

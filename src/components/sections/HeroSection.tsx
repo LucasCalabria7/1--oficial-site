@@ -1,12 +1,80 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Button from '../ui/Button';
+import { useKeenSlider } from 'keen-slider/react';
+import 'keen-slider/keen-slider.min.css';
 
 const HeroSection: React.FC = () => {
   const scrollToNucleus = (section: string) => {
     const element = document.querySelector(section);
     element?.scrollIntoView({ behavior: 'smooth' });
   };
+
+  const [sliderRef] = useKeenSlider<HTMLDivElement>(
+    {
+      loop: true,
+      mode: "snap",
+      slides: { perView: 1 },
+      defaultAnimation: {
+        duration: 1000
+      },
+      renderMode: "performance"
+    },
+    [
+      (slider) => {
+        let timeout: ReturnType<typeof setTimeout>;
+        let mouseOver = false;
+        
+        function clearNextTimeout() {
+          clearTimeout(timeout);
+        }
+        
+        function nextTimeout() {
+          clearTimeout(timeout);
+          if (mouseOver) return;
+          timeout = setTimeout(() => {
+            slider.next();
+          }, 4000);
+        }
+        
+        slider.on("created", () => {
+          slider.container.addEventListener("mouseover", () => {
+            mouseOver = true;
+            clearNextTimeout();
+          });
+          slider.container.addEventListener("mouseout", () => {
+            mouseOver = false;
+            nextTimeout();
+          });
+          nextTimeout();
+        });
+        slider.on("dragStarted", clearNextTimeout);
+        slider.on("animationEnded", nextTimeout);
+        slider.on("updated", nextTimeout);
+      },
+    ]
+  );
+
+  const slides = [
+    {
+      subtitle: "Para Empresas",
+      heading: "Escale suas vendas com nosso exército de afiliados",
+      features: [
+        "+1000 afiliados altamente treinados",
+        "sem precisar investir em anúncios",
+        "escale globalmente"
+      ]
+    },
+    {
+      subtitle: "Para Vendedores Globais",
+      heading: "Venda os melhores produtos com recorrência global",
+      features: [
+        "Produtos Globais",
+        "Recorrência em qualquer moeda",
+        "Melhores estratégias do mercado"
+      ]
+    }
+  ];
 
   return (
     <section
@@ -34,41 +102,62 @@ const HeroSection: React.FC = () => {
 
       <div className="container relative z-10">
         <div className="max-w-4xl mx-auto text-center">
-          <motion.h1
-            className="text-white mb-6"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            Seja a Diferença com <span className="text-gold-500">1%</span> que transforma o mundo.
-          </motion.h1>
-          
-          <motion.p
-            className="text-gray-200 text-lg md:text-xl mb-8 md:mb-10"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            Construa sua história com inovação, tecnologia e vendas em um dos ecossistemas mais exclusivos do mercado digital. 
-            Estratégias exclusivas que apenas o topo 1% conhece e aplica.
-          </motion.p>
+          <div ref={sliderRef} className="keen-slider">
+            {slides.map((slide, index) => (
+              <div key={index} className="keen-slider__slide flex flex-col justify-center min-h-[400px]">
+                <div className="mb-16">
+                  <motion.h3
+                    className="text-primary-300 text-xl md:text-2xl font-medium mb-6"
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8 }}
+                  >
+                    {slide.subtitle}
+                  </motion.h3>
+                  <motion.h1
+                    className="text-white"
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 0.2 }}
+                  >
+                    {slide.heading}
+                  </motion.h1>
+                </div>
+                
+                <motion.div
+                  className="grid grid-cols-1 md:grid-cols-3 gap-6 text-gray-200 text-lg md:text-xl"
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.4 }}
+                >
+                  {slide.features.map((feature, featureIndex) => (
+                    <div key={featureIndex} className="flex items-center justify-center">
+                      <span className="text-primary-300 mr-3 text-2xl md:text-3xl">✓</span>
+                      {feature}
+                    </div>
+                  ))}
+                </motion.div>
+              </div>
+            ))}
+          </div>
           
           <motion.div
-            className="flex flex-col sm:flex-row gap-4 justify-center"
+            className="flex flex-col sm:flex-row gap-6 justify-center mt-16"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
           >
             <Button 
               onClick={() => scrollToNucleus('#tech-nucleus')}
+              variant="primary"
             >
-              Conheça o Núcleo Tecnologia
+              Conheça nosso núcleo de tecnologia
             </Button>
             <Button 
               onClick={() => scrollToNucleus('#sales-nucleus')}
               variant="outline"
             >
-              Conheça o Núcleo Vendas
+              Conheça nosso núcleo de vendas
             </Button>
           </motion.div>
         </div>
