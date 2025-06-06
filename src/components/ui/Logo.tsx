@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from '../../assets/logo-sem-bg.png';
 
 interface LogoProps {
   size?: 'small' | 'medium' | 'large';
@@ -18,7 +17,7 @@ const Logo: React.FC<LogoProps> = ({
   
   return (
     <img 
-      src={logo} 
+      src="/src/assets/logo-sem-bg.png" 
       alt="1% World" 
       className={`${sizeMap[size]} w-auto`}
     />

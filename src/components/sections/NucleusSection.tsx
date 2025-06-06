@@ -54,16 +54,11 @@ const NucleusSection: React.FC = () => {
                 <Button className="w-full" href={LINKS.INSTAGRAM_THALES} external icon={<Instagram size={18} />}>
                   Instagram Thales Marinho
                 </Button>
-                <div className="grid grid-cols-2 gap-4">
-                  <Button href={LINKS.SALES_FUNNEL} variant="outline" external>
-                    1% World Vendas
-                  </Button>
-                  <Button href={LINKS.SALES_CHEAP_PRODUCT} variant="outline" external>
-                    Seja um Associate
-                  </Button>
-                </div>
-                <Button href={LINKS.SALES_EXPENSIVE_PRODUCT} variant="primary" external fullWidth>
-                  CEO's Vendas
+                <Button href={LINKS.WHATSAPP_SALES} variant="outline" external fullWidth>
+                  Grupo Exclusivo 1% Vendas
+                </Button>
+                <Button href={LINKS.SALES_FUNNEL} variant="outline" external fullWidth>
+                  1% World Vendas
                 </Button>
               </div>
             </div>
@@ -105,16 +100,11 @@ const NucleusSection: React.FC = () => {
                 <Button className="w-full" href={LINKS.INSTAGRAM_CALABRIA} external icon={<Instagram size={18} />}>
                   Instagram Lucas Calabria
                 </Button>
-                <div className="grid grid-cols-2 gap-4">
-                  <Button href={LINKS.TECH_FUNNEL} variant="outline" external>
-                    1% World Tecnologia
-                  </Button>
-                  <Button href={LINKS.TECH_CHEAP_PRODUCT} variant="outline" external>
-                    Seja um Dev do Futuro
-                  </Button>
-                </div>
-                <Button href={LINKS.TECH_EXPENSIVE_PRODUCT} variant="primary" external fullWidth>
-                  CEO's Tecnologia
+                <Button href={LINKS.WHATSAPP_TECH} variant="outline" external fullWidth>
+                  Grupo Exclusivo 1% Tecnologia
+                </Button>
+                <Button href={LINKS.TECH_FUNNEL} variant="outline" external fullWidth>
+                  1% World Tecnologia
                 </Button>
               </div>
             </div>
